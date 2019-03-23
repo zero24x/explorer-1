@@ -1,0 +1,6 @@
+
+#MYCOIN
+@reboot /home/user/mycoin/src/mycoind -daemon -txindex
+@reboot sleep 45; cd /home/user/explorer_mycoin && NODE_ENV=production /usr/local/bin/forever start bin/cluster
+*/3 * * * * cd /home/user/explorer_mycoin && ./pidcheck.sh && NODE_ENV=production /usr/bin/nodejs --stack-size=1000000 scripts/sync.js index update > /dev/null 2>&1
+*/10 * * * * cd /home/user/explorer_mycoin && ./pidcheck.sh && NODE_ENV=production /usr/bin/nodejs --stack-size=1000000 scripts/peers.js > /dev/null 2>&1

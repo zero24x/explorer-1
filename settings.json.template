@@ -19,7 +19,7 @@
   //  Options:
   //    bitcoin = Default Bitcoin/Dash/... clones
   //    ripple = Ripple clones
-  "baseType": "pivx",
+  "baseType": "bitcoin",
 
   // The epoch time for a ripple based coin.
   // You can ignore this setting if you're not using a ripple based coin.
