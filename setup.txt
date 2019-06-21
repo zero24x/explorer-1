@@ -1,0 +1,17 @@
+check if needed indexes are there:
+
+db.adminCommand( { listDatabases: 1 } )
+
+
+db.txes.createIndex( { txid: 1 } )
+db.txes.createIndex( { timestamp: 1 } )
+db.addresses.createIndex( { a_id: 1 } )
+
+
+db.txes.aggregate( [ { $indexStats: { } } ] )
+
+
+db.txes.getIndexes()
+db.addresses.getIndexes()
+
+db.runCommand( { listCollections:1 } )
